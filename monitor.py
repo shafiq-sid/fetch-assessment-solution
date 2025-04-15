@@ -18,6 +18,7 @@ def check_health(endpoint):
     try:
         response = requests.request(method, url, headers=headers, json=body)
 
+        # calculated request time and added check for it. 
         time_taken = response.elapsed.total_seconds() * 1000
         
         if time_taken <= 500 and 200 <= response.status_code < 300:
@@ -36,7 +37,7 @@ def monitor_endpoints(file_path):
         for endpoint in config:
             domain = endpoint["url"].split("//")[-1].split("/")[0]
             
-            # remove port
+            # removed port from if exists.
             domain = domain.split(":")[0]
 
             result = check_health(endpoint)
