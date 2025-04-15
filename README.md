@@ -42,3 +42,4 @@ cd <your-virtual-env-name>
 ### Issues Identification and Fixes
 - First issue found was passing Method as `NoneType` because there was no fallback method provided if there is no method in .yaml file. Fixed it passing fallback method of GET when there is none.
 - (feat) Add check for 500ms or less request time for API availability. (fix) Calculated total time request takes by using `request.elapsed`. Further converting it to milliseconds and added into if condition that determines availability.
+- (feat) Port should not used with domain for logging. (fix) Check if domain has a port, if then removed it from the domain and passed the trimmed domain to logging.
