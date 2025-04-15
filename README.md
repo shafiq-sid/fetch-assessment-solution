@@ -29,7 +29,7 @@ pip install virtualenv
 python -m venv <your-virtual-env-name>
 cd <your-virtual-env-name>
 ```
-- Now we have to activate virtual environment you can use the appropriate command from the table:
+- Now we have to activate virtual environment you can use the appropriate command from the below:
 ```shell
 (Windows - Command Prompt) - path\to\venv\Scripts\activate
 (Windows - PowerShell) - .\Scripts\Activate
@@ -40,6 +40,6 @@ cd <your-virtual-env-name>
 - Now, use the virtual environment for further commands.
 
 ### Issues Identification and Fixes
-- First issue found was passing Method as `NoneType` because there was no fallback method provided if there is no method in .yaml file. Fixed it passing fallback method of GET when there is none.
+- First issue found was passing Method as `NoneType` because there was no fallback method provided if there is no method in .yaml file. Fixed it by passing fallback method of GET when there is none.
 - (feat) Add check for 500ms or less request time for API availability. (fix) Calculated total time request takes by using `request.elapsed`. Further converting it to milliseconds and added into if condition that determines availability.
-- (feat) Port should not used with domain for logging. (fix) Check if domain has a port, if then removed it from the domain and passed the trimmed domain to logging.
+- (feat) Port should not be used with domain for logging. (fix) Check if domain has a port, if then removed it from the domain and passed the trimmed domain to logging.
